@@ -21,7 +21,7 @@ export const Nav = () => {
 
         <nav
           aria-label="Główna nawigacja"
-          className="hidden items-center gap-4 lg:flex xl:gap-6"
+          className="hidden items-center gap-3 lg:flex xl:gap-5"
         >
           {navLinks
             .filter((link) => link.href !== '/rodo')
@@ -29,7 +29,7 @@ export const Nav = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[0.68rem] font-medium uppercase tracking-[0.14em] text-neutral-700 transition-colors hover:text-gold xl:text-xs"
+                className="text-[0.64rem] font-medium uppercase tracking-[0.12em] text-neutral-700 transition-colors hover:text-gold xl:text-xs xl:tracking-[0.14em]"
               >
                 {link.label}
               </Link>

@@ -32,6 +32,9 @@ self.__BUILD_MANIFEST = {
   "/rodo": [
     "static/chunks/pages/rodo.js"
   ],
+  "/sklep": [
+    "static/chunks/pages/sklep.js"
+  ],
   "/zabiegi": [
     "static/chunks/pages/zabiegi.js"
   ],
@@ -52,6 +55,7 @@ self.__BUILD_MANIFEST = {
     "/problemy",
     "/problemy/[slug]",
     "/rodo",
+    "/sklep",
     "/zabiegi",
     "/[slug]"
   ]

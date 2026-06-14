@@ -22,26 +22,52 @@ const ContactPage = () => (
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-7 text-neutral-500">
           Chcesz dobrać zabieg albo sprawdzić dostępne terminy? Skorzystaj z
-          rezerwacji online.
+          rezerwacji online albo napisz w sprawie produktu ze sklepu.
         </p>
       </header>
 
-      <section className="rounded-lg border border-stone-200 bg-white p-6 text-center shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
-        <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
-          Biały Lotos
-        </p>
-        <h2 className="mt-3 font-dmserif text-3xl font-normal text-neutral-900">
-          Salon piękności w Ciechanowie
-        </h2>
-        <a
-          className="mt-6 inline-flex border-b border-gold pb-1 text-sm font-medium uppercase tracking-[0.16em] text-gold"
-          href={bookingUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Rezerwacja online
-        </a>
-      </section>
+      <div className="grid gap-5 md:grid-cols-2">
+        <section className="rounded-lg border border-stone-200 bg-white p-6 text-center shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
+            Biały Lotos
+          </p>
+          <h2 className="mt-3 font-dmserif text-3xl font-normal text-neutral-900">
+            Salon piękności w Ciechanowie
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-neutral-500">
+            Umów wizytę, konsultację lub sprawdź aktualne terminy online.
+          </p>
+          <a
+            className="mt-6 inline-flex border-b border-gold pb-1 text-sm font-medium uppercase tracking-[0.16em] text-gold"
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rezerwacja online
+          </a>
+        </section>
+
+        <section className="rounded-lg border border-stone-200 bg-white p-6 text-center shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
+            Sklep online
+          </p>
+          <h2 className="mt-3 font-dmserif text-3xl font-normal text-neutral-900">
+            Zamów produkt lub voucher
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-neutral-500">
+            Podaj nazwę produktu, wartość vouchera albo cel pielęgnacyjny.
+            Potwierdzimy dostępność, odbiór i szczegóły płatności.
+          </p>
+          <a
+            className="mt-6 inline-flex border-b border-gold pb-1 text-sm font-medium uppercase tracking-[0.16em] text-gold"
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Napisz przez Booksy
+          </a>
+        </section>
+      </div>
     </main>
   </div>
 )

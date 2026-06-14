@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { effectGalleries } from '../data/effects'
+import { shopProducts } from '../data/products'
 import { Nav } from '../components/Nav'
 import { GoogleMapEmbed } from '../components/PrivacyConsent'
 import Face from '../assets/img/faceTwo.png'
@@ -174,6 +175,10 @@ const blogPosts = [
   },
 ]
 
+const shopPreview = shopProducts
+  .filter((product) => product.featured)
+  .slice(0, 3)
+
 const SectionHeader = ({ eyebrow, title, description, align = 'center' }) => (
   <header
     className={`space-y-3 ${align === 'left' ? 'text-left' : 'mx-auto max-w-3xl text-center'}`}
@@ -308,6 +313,42 @@ const HomePage = () => {
                     Dowiedz się więcej
                   </GoldLink>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-stone-200 bg-white px-5 py-16 sm:px-6">
+          <div className="mx-auto max-w-6xl space-y-10">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <SectionHeader
+                align="left"
+                eyebrow="Sklep online"
+                title="Vouchery i pielęgnacja po zabiegach"
+                description="Pierwsza wersja sklepu Biały Lotos: vouchery prezentowe, produkty po PMU i pielęgnacja po zabiegach laserowych zamawiane przez kontakt z salonem."
+              />
+              <GoldLink href="/sklep">Przejdź do sklepu</GoldLink>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {shopPreview.map((product) => (
+                <Link
+                  key={product.name}
+                  href="/sklep"
+                  className="rounded-lg border border-stone-200 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-transform hover:-translate-y-1"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
+                    {product.category}
+                  </p>
+                  <h3 className="mt-3 font-dmserif text-2xl font-normal leading-tight text-neutral-900">
+                    {product.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-medium text-gold">
+                    {product.price}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-neutral-500">
+                    {product.description}
+                  </p>
+                </Link>
               ))}
             </div>
           </div>

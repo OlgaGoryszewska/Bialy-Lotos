@@ -89,6 +89,12 @@
       "namedRegex": "^/rodo(?:/)?$"
     },
     {
+      "page": "/sklep",
+      "regex": "^/sklep(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sklep(?:/)?$"
+    },
+    {
       "page": "/zabiegi",
       "regex": "^/zabiegi(?:/)?$",
       "routeKeys": {},
@@ -101,16 +107,16 @@
       "routeKeys": {
         "nxtPslug": "nxtPslug"
       },
-      "dataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/problemy/([^/]+?)\\.json$",
-      "namedDataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/problemy/(?<nxtPslug>[^/]+?)\\.json$"
+      "dataRouteRegex": "^/_next/data/npzPsh7Fw3l0PHSwOyfCD/problemy/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/npzPsh7Fw3l0PHSwOyfCD/problemy/(?<nxtPslug>[^/]+?)\\.json$"
     },
     {
       "page": "/[slug]",
       "routeKeys": {
         "nxtPslug": "nxtPslug"
       },
-      "dataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/([^/]+?)\\.json$",
-      "namedDataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/(?<nxtPslug>[^/]+?)\\.json$"
+      "dataRouteRegex": "^/_next/data/npzPsh7Fw3l0PHSwOyfCD/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/npzPsh7Fw3l0PHSwOyfCD/(?<nxtPslug>[^/]+?)\\.json$"
     }
   ],
   "rsc": {

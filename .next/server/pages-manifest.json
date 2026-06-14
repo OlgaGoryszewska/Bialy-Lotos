@@ -12,6 +12,7 @@
   "/problemy": "pages/problemy.html",
   "/problemy/[slug]": "pages/problemy/[slug].js",
   "/rodo": "pages/rodo.html",
+  "/sklep": "pages/sklep.html",
   "/zabiegi": "pages/zabiegi.html",
   "/404": "pages/404.html"
 }

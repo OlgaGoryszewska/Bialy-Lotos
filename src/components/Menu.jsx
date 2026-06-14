@@ -6,6 +6,7 @@ export const navLinks = [
   { href: '/zabiegi', label: 'Zabiegi' },
   { href: '/problemy', label: 'Problemy' },
   { href: '/cennik', label: 'Cennik' },
+  { href: '/sklep', label: 'Sklep' },
   { href: '/o-nas', label: 'O Nas' },
   { href: '/galeria', label: 'Galeria' },
   { href: '/blog', label: 'Blog' },
