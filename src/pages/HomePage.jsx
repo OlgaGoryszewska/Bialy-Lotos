@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { effectGalleries } from '../data/effects'
 import { Nav } from '../components/Nav'
+import { GoogleMapEmbed } from '../components/PrivacyConsent'
 import Face from '../assets/img/faceTwo.png'
 import FaceDetail from '../assets/img/faceNoice.jpg'
 import FaceHorizontal from '../assets/img/faceNoiceHorisontal.jpg'
@@ -562,13 +563,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-lg border border-stone-200 shadow-[0_24px_60px_rgba(15,23,42,0.07)]">
-              <iframe
-                title="Mapa Google Biały Lotos Ciechanów"
-                src="https://www.google.com/maps?q=Bia%C5%82y%20Lotos%20Ciechan%C3%B3w&output=embed"
-                className="h-[420px] w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <GoogleMapEmbed />
             </div>
           </div>
         </section>

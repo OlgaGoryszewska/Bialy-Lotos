@@ -11,5 +11,6 @@
   "/o-nas": "pages/o-nas.js",
   "/problemy": "pages/problemy.js",
   "/problemy/[slug]": "pages/problemy/[slug].js",
+  "/rodo": "pages/rodo.js",
   "/zabiegi": "pages/zabiegi.js"
 }

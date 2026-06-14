@@ -4,7 +4,7 @@
     "/brwi-permanentne-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/brwi-permanentne-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/brwi-permanentne-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -17,7 +17,7 @@
     "/depilacja-laserowa-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/depilacja-laserowa-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/depilacja-laserowa-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -30,7 +30,7 @@
     "/hifu-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/hifu-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/hifu-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -43,7 +43,7 @@
     "/kreski-permanentne-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/kreski-permanentne-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/kreski-permanentne-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -56,7 +56,7 @@
     "/laminacja-brwi-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/laminacja-brwi-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/laminacja-brwi-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -69,7 +69,7 @@
     "/laser-frakcyjny-co2-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/laser-frakcyjny-co2-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/laser-frakcyjny-co2-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -82,7 +82,7 @@
     "/lifting-rzes-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/lifting-rzes-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/lifting-rzes-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -95,7 +95,7 @@
     "/mezoterapia-mikroiglowa-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/mezoterapia-mikroiglowa-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/mezoterapia-mikroiglowa-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -108,7 +108,7 @@
     "/peeling-weglowy-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/peeling-weglowy-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/peeling-weglowy-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -121,7 +121,7 @@
     "/problemy/blizny-potradzikowe-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/blizny-potradzikowe-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/blizny-potradzikowe-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -134,7 +134,7 @@
     "/problemy/nadmierne-owlosienie-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/nadmierne-owlosienie-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/nadmierne-owlosienie-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -147,7 +147,7 @@
     "/problemy/nieudany-pmu-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/nieudany-pmu-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/nieudany-pmu-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -160,7 +160,7 @@
     "/problemy/przebarwienia-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/przebarwienia-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/przebarwienia-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -173,7 +173,7 @@
     "/problemy/utrata-jedrnosci-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/utrata-jedrnosci-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/utrata-jedrnosci-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -186,7 +186,7 @@
     "/problemy/zmarszczki-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/problemy/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/zmarszczki-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/zmarszczki-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -199,7 +199,7 @@
     "/przedluzanie-rzes-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/przedluzanie-rzes-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/przedluzanie-rzes-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -212,7 +212,7 @@
     "/usta-permanentne-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/usta-permanentne-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/usta-permanentne-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -225,7 +225,7 @@
     "/usuwanie-makijazu-permanentnego-ciechanow": {
       "initialRevalidateSeconds": false,
       "srcRoute": "/[slug]",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/usuwanie-makijazu-permanentnego-ciechanow.json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/usuwanie-makijazu-permanentnego-ciechanow.json",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -239,9 +239,9 @@
   "dynamicRoutes": {
     "/problemy/[slug]": {
       "routeRegex": "^/problemy/([^/]+?)(?:/)?$",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/[slug].json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/problemy/[slug].json",
       "fallback": false,
-      "dataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/([^/]+?)\\.json$",
+      "dataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/problemy/([^/]+?)\\.json$",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -253,9 +253,9 @@
     },
     "/[slug]": {
       "routeRegex": "^/([^/]+?)(?:/)?$",
-      "dataRoute": "/_next/data/cVHIc_58XjJR6PwzNzTfC/[slug].json",
+      "dataRoute": "/_next/data/PI3r_WhUkJb7-YCy2KOoL/[slug].json",
       "fallback": false,
-      "dataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/([^/]+?)\\.json$",
+      "dataRouteRegex": "^/_next/data/PI3r_WhUkJb7\\-YCy2KOoL/([^/]+?)\\.json$",
       "allowHeader": [
         "host",
         "x-matched-path",
