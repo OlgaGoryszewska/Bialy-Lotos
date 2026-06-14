@@ -37,7 +37,7 @@ export const Menu = () => {
             href="/cennik"
             onClick={() => setShowMenu(false)}
           >
-            Usługa
+            Cennik
           </Link>
           <a
             className="w-full text-center text-gold pb-4"
@@ -45,16 +45,9 @@ export const Menu = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Rezerwacja/ kosmetyka
+            Rezerwacja
           </a>
-          <a
-            className="w-full text-center text-gold pb-4"
-            href="https://booksy.com/pl-pl/108807_salon-bialy-lotos-centrum-zdrowych-stop_podologia_4495_ciechanow#ba_s=sr_1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Rezerwacja/ podologia
-          </a>
+
         </div>
       )}
     </div>

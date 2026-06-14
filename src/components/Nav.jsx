@@ -9,7 +9,7 @@ export const Nav = () => {
       <Image
         src={logoText}
         alt="Logo Text"
-        width={100}
+        width={90}
         height={40}
         className="m-1.5 ml-2"
       />

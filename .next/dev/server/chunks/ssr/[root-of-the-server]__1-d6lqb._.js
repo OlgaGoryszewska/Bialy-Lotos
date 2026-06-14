@@ -104,7 +104,7 @@ const Menu = ()=>{
                         className: "w-full text-center text-gold pb-4",
                         href: "/cennik",
                         onClick: ()=>setShowMenu(false),
-                        children: "Usługa"
+                        children: "Cennik"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Menu.jsx",
                         lineNumber: 35,
@@ -115,21 +115,10 @@ const Menu = ()=>{
                         href: "https://booksy.com/pl-pl/142271_salon-pieknosci-bialy-lotos_salon-kosmetyczny_4495_ciechanow#ba_s=seo",
                         target: "_blank",
                         rel: "noreferrer",
-                        children: "Rezerwacja/ kosmetyka"
+                        children: "Rezerwacja"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Menu.jsx",
                         lineNumber: 42,
-                        columnNumber: 11
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
-                        className: "w-full text-center text-gold pb-4",
-                        href: "https://booksy.com/pl-pl/108807_salon-bialy-lotos-centrum-zdrowych-stop_podologia_4495_ciechanow#ba_s=sr_1",
-                        target: "_blank",
-                        rel: "noreferrer",
-                        children: "Rezerwacja/ podologia"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Menu.jsx",
-                        lineNumber: 50,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -191,7 +180,7 @@ const Nav = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                 src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$assets$2f$img$2f$logoText$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$assets$2f$img$2f$logoText$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
                 alt: "Logo Text",
-                width: 100,
+                width: 90,
                 height: 40,
                 className: "m-1.5 ml-2"
             }, void 0, false, {

@@ -1,15 +1,8 @@
 @font-face {
-  font-family: 'Bochan';
-  src: url('./assets/fonts/Bochan.otf') format('opentype');
-}
-@font-face {
-  font-family: 'BochanAlternative';
-  src: url('./assets/fonts/BochanAlternative.otf') format('opentype');
-}
-@font-face {
   font-family: 'DM Serif Display';
   src: url('./assets/fonts/DMSerifDisplay-Regular.ttf');
 }
+
 @font-face {
   font-family: 'Poppins';
   src: url('./assets/fonts/Poppins-Regular.ttf');
@@ -20,14 +13,13 @@
 @tailwind utilities;
 
 body {
-  @apply bg-primary text-black flex flex-col min-h-screen;
+  @apply font-poppins bg-primary text-black flex flex-col min-h-screen;
 }
-li {
-  @apply font-bochan text-gold text-2xl;
-}
+
 p {
   @apply font-poppins text-black text-sm;
 }
+
 .card {
   @apply bg-white p-4 rounded-2xl shadow-lg;
 }

@@ -28,6 +28,12 @@
       "regex": "^/(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/cennik",
+      "regex": "^/cennik(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cennik(?:/)?$"
     }
   ],
   "dataRoutes": [],
