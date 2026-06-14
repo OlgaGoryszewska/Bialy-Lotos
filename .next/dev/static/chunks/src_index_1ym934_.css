@@ -319,6 +319,10 @@ img, video {
   margin-top: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: .5rem;
+}
+
 .block {
   display: block;
 }
@@ -476,6 +480,10 @@ img, video {
   border-width: 1px;
 }
 
+.border-0 {
+  border-width: 0;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -502,6 +510,14 @@ img, video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-16 {
@@ -537,6 +553,11 @@ img, video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .pb-3 {
@@ -604,6 +625,11 @@ img, video {
   line-height: 1rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -636,6 +662,10 @@ img, video {
   letter-spacing: .22em;
 }
 
+.tracking-\[0\.18em\] {
+  letter-spacing: .18em;
+}
+
 .text-gold {
   --tw-text-opacity: 1;
   color: rgb(181 152 63 / var(--tw-text-opacity));
@@ -666,10 +696,26 @@ img, video {
   color: rgb(23 23 23 / var(--tw-text-opacity));
 }
 
+.text-neutral-800 {
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
 .shadow-\[0_20px_50px_rgba\(15\,23\,42\,0\.06\)\] {
   --tw-shadow: 0 20px 50px #0f172a0f;
   --tw-shadow-colored: 0 20px 50px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-\[0_20px_50px_rgba\(15\,23\,42\,0\.05\)\] {
+  --tw-shadow: 0 20px 50px #0f172a0d;
+  --tw-shadow-colored: 0 20px 50px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline-none {
+  outline-offset: 2px;
+  outline: 2px solid #0000;
 }
 
 .filter {
@@ -703,6 +749,16 @@ p {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   border-radius: 1rem;
   padding: 1rem;
+}
+
+.placeholder\:text-neutral-400::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+
+.focus\:border-gold:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(181 152 63 / var(--tw-border-opacity));
 }
 
 @media (min-width: 640px) {

@@ -19,6 +19,55 @@ const mobileLabelClass =
 const getSectionId = (groupTitle, sectionTitle) =>
   `${groupTitle}-${sectionTitle}`
 
+const normalizeSearch = (value) => value.trim().toLocaleLowerCase('pl-PL')
+
+const filterPriceGroups = (groups, query) => {
+  const normalizedQuery = normalizeSearch(query)
+
+  if (!normalizedQuery) {
+    return groups
+  }
+
+  return groups
+    .map((group) => {
+      const groupMatches = normalizeSearch(group.title).includes(
+        normalizedQuery
+      )
+      const matchingSections = group.sections
+        .map((section) => {
+          const sectionMatches = normalizeSearch(section.title).includes(
+            normalizedQuery
+          )
+          const matchingItems =
+            groupMatches || sectionMatches
+              ? section.items
+              : section.items.filter(([service]) =>
+                  normalizeSearch(service).includes(normalizedQuery)
+                )
+
+          if (matchingItems.length === 0) {
+            return null
+          }
+
+          return {
+            ...section,
+            items: matchingItems,
+          }
+        })
+        .filter(Boolean)
+
+      if (matchingSections.length === 0) {
+        return null
+      }
+
+      return {
+        ...group,
+        sections: matchingSections,
+      }
+    })
+    .filter(Boolean)
+}
+
 const PriceSection = ({ title, items, notes, isOpen, onToggle }) => (
   <section className={sectionClass}>
     <button
@@ -107,13 +156,17 @@ const PriceListPage = () => {
   const [openSections, setOpenSections] = useState([
     getSectionId('PMU', 'Makijaż permanentny'),
   ])
+  const [searchQuery, setSearchQuery] = useState('')
+  const filteredGroups = filterPriceGroups(priceGroups, searchQuery)
+  const normalizedSearchQuery = normalizeSearch(searchQuery)
+  const hasSearchQuery = normalizedSearchQuery.length > 0
 
   const toggleSection = (sectionId) => {
     setOpenSections((currentSections) =>
       currentSections.includes(sectionId)
         ? currentSections.filter(
-          (currentSection) => currentSection !== sectionId
-        )
+            (currentSection) => currentSection !== sectionId
+          )
         : [...currentSections, sectionId]
     )
   }
@@ -133,14 +186,43 @@ const PriceListPage = () => {
           Cennik Biały Lotos
         </h1>
 
-        {priceGroups.map((group) => (
-          <PriceGroup
-            key={group.title}
-            {...group}
-            openSections={openSections}
-            onToggleSection={toggleSection}
+        <div className="rounded-lg border border-stone-200 bg-white p-4 shadow-[0_20px_50px_rgba(15,23,42,0.05)]">
+          <label
+            htmlFor="treatment-search"
+            className="mb-2 block text-xs font-medium uppercase tracking-[0.18em] text-neutral-400"
+          >
+            Szukaj zabiegu
+          </label>
+          <input
+            id="treatment-search"
+            type="search"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder="np. brwi, laser, rzęsy..."
+            className="w-full border-0 border-b border-stone-200 bg-white px-0 py-3 text-base text-neutral-800 outline-none placeholder:text-neutral-400 focus:border-gold"
           />
-        ))}
+        </div>
+
+        {filteredGroups.length > 0 ? (
+          filteredGroups.map((group) => (
+            <PriceGroup
+              key={group.title}
+              {...group}
+              openSections={
+                hasSearchQuery
+                  ? group.sections.map((section) =>
+                      getSectionId(group.title, section.title)
+                    )
+                  : openSections
+              }
+              onToggleSection={toggleSection}
+            />
+          ))
+        ) : (
+          <p className="rounded-lg border border-stone-200 bg-white p-6 text-center text-sm leading-6 text-neutral-500 shadow-[0_20px_50px_rgba(15,23,42,0.05)]">
+            Brak wyników dla tej frazy.
+          </p>
+        )}
       </main>
     </div>
   )
