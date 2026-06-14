@@ -309,12 +309,12 @@ img, video {
   margin-right: auto;
 }
 
-.ml-2 {
-  margin-left: .5rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.ml-2 {
+  margin-left: .5rem;
 }
 
 .mt-4 {
@@ -341,12 +341,12 @@ img, video {
   width: 100%;
 }
 
-.max-w-full {
-  max-width: 100%;
-}
-
 .max-w-6xl {
   max-width: 72rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 @keyframes spin {
