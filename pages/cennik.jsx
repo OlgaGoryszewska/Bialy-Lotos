@@ -112,8 +112,8 @@ const PriceListPage = () => {
     setOpenSections((currentSections) =>
       currentSections.includes(sectionId)
         ? currentSections.filter(
-            (currentSection) => currentSection !== sectionId
-          )
+          (currentSection) => currentSection !== sectionId
+        )
         : [...currentSections, sectionId]
     )
   }
