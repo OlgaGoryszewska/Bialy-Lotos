@@ -21,7 +21,24 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/problemy/[slug]",
+      "regex": "^/problemy/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/problemy/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[slug]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -30,13 +47,66 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
       "page": "/cennik",
       "regex": "^/cennik(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/cennik(?:/)?$"
+    },
+    {
+      "page": "/galeria",
+      "regex": "^/galeria(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/galeria(?:/)?$"
+    },
+    {
+      "page": "/kontakt",
+      "regex": "^/kontakt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/kontakt(?:/)?$"
+    },
+    {
+      "page": "/o-nas",
+      "regex": "^/o\\-nas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/o\\-nas(?:/)?$"
+    },
+    {
+      "page": "/problemy",
+      "regex": "^/problemy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/problemy(?:/)?$"
+    },
+    {
+      "page": "/zabiegi",
+      "regex": "^/zabiegi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/zabiegi(?:/)?$"
     }
   ],
-  "dataRoutes": [],
+  "dataRoutes": [
+    {
+      "page": "/problemy/[slug]",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "dataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/problemy/(?<nxtPslug>[^/]+?)\\.json$"
+    },
+    {
+      "page": "/[slug]",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "dataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/cVHIc_58XjJR6PwzNzTfC/(?<nxtPslug>[^/]+?)\\.json$"
+    }
+  ],
   "rsc": {
     "header": "rsc",
     "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
