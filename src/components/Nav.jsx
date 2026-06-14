@@ -1,12 +1,19 @@
-import React from 'react';
-import { Menu } from './Menu';
-import logoText from '../assets/img/logoText.png';
+import React from 'react'
+import Image from 'next/image'
+import { Menu } from './Menu'
+import logoText from '../assets/img/logoText.png'
 
 export const Nav = () => {
   return (
     <header className="flex justify-between h-11">
-      <img className="w-17 m-1.5 ml-2   " src={logoText} alt="Logo Text" />
+      <Image
+        src={logoText}
+        alt="Logo Text"
+        width={150}
+        height={40}
+        className="m-1.5 ml-2"
+      />
       <Menu />
     </header>
-  );
-};
+  )
+}

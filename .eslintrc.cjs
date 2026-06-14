@@ -5,9 +5,8 @@ module.exports = {
     'next',
     'next/core-web-vitals',
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'prettier',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: {
@@ -19,5 +18,7 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     'react/jsx-no-target-blank': 'off',
+    '@next/next/no-img-element': 'off',
+    'import/no-anonymous-default-export': 'off',
   },
-};
+}

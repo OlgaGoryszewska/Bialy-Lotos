@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['index.html', './pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    'index.html',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       animation: {},
@@ -37,8 +41,8 @@ export default {
         '.text-shadow-lg': {
           'text-shadow': '3px 3px 6px rgba(0, 0, 0, 0.7)',
         },
-      };
-      addUtilities(newUtilities);
+      }
+      addUtilities(newUtilities)
     },
   ],
-};
+}

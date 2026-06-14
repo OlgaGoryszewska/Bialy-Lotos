@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import logo from '../assets/img/menuLogo.png';
+import { useState } from 'react'
+import Image from 'next/image'
+import logo from '../assets/img/menuLogo.png'
 
 export const Menu = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isSpinning, setIsSpinning] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
+  const [isSpinning, setIsSpinning] = useState(false)
 
   const handleToggleMenu = () => {
-    setIsSpinning(true);
-    setShowMenu((current) => !current);
+    setIsSpinning(true)
+    setShowMenu((current) => !current)
     window.setTimeout(() => {
-      setIsSpinning(false);
-    }, 300);
-  };
+      setIsSpinning(false)
+    }, 300)
+  }
 
   return (
     <div className="flex flex-col max-w-full">
@@ -20,10 +21,12 @@ export const Menu = () => {
         onClick={handleToggleMenu}
         type="button"
       >
-        <img
+        <Image
           alt="menu"
           src={logo}
-          className={`w-11 m-2 ${isSpinning ? 'animate-spin' : ''}`}
+          width={44}
+          height={44}
+          className={`${isSpinning ? 'animate-spin' : ''} m-2`}
         />
       </button>
       {showMenu && (
@@ -44,14 +47,8 @@ export const Menu = () => {
           >
             Rezerwacja/ podologia
           </a>
-          <a className="w-full text-center text-gold pb-4 hidden" href="/">
-            O nas
-          </a>
-          <a className="w-full text-center text-gold pb-4 hidden" href="/">
-            Kontakt
-          </a>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
