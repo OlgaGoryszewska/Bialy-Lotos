@@ -4,12 +4,20 @@ import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import { Nav } from '../src/components/Nav'
 import { shopCategories, shopProducts } from '../src/data/products'
-import faceImage from '../src/assets/img/faceNoice.jpg'
 import horizontalImage from '../src/assets/img/faceNoiceHorisontal.jpg'
-import portraitImage from '../src/assets/img/faceTwo.png'
-import salonImage from '../src/assets/img/sylwia.jpg'
+import productImage from '../src/assets/img/product_01.png'
+import voucherImage200 from '../src/assets/img/voucher_200zl.png'
+import voucherImage500 from '../src/assets/img/voucher_500zl.png'
 
-const productImages = [portraitImage, faceImage, horizontalImage, salonImage]
+const voucherImagesByName = {
+  'Voucher podarunkowy': voucherImage200,
+  'Voucher premium': voucherImage500,
+}
+
+const getProductImage = (product) =>
+  product.category === 'Vouchery'
+    ? (voucherImagesByName[product.name] ?? voucherImage200)
+    : productImage
 
 const ShopPage = () => {
   const [activeCategory, setActiveCategory] = useState('Wszystkie')
@@ -93,20 +101,25 @@ const ShopPage = () => {
 
         <section className="mt-10">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {visibleProducts.map((product, index) => (
+            {visibleProducts.map((product) => (
               <article
                 key={product.name}
                 className="flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
               >
                 <div className="relative">
                   <Image
-                    src={productImages[index % productImages.length]}
+                    src={getProductImage(product)}
                     alt={product.name}
                     className="aspect-[4/3] h-full w-full object-cover"
                   />
                   <span className="absolute left-4 top-4 bg-white/88 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-gold backdrop-blur">
                     {product.badge}
                   </span>
+                  {product.comingSoon && (
+                    <span className="absolute right-4 top-4 bg-neutral-900/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-white backdrop-blur">
+                      Wkrótce
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <p className="text-xs font-medium uppercase tracking-[0.18em] text-neutral-400">
@@ -118,6 +131,11 @@ const ShopPage = () => {
                   <p className="mt-2 text-sm font-medium text-gold">
                     {product.price}
                   </p>
+                  {product.comingSoon && (
+                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
+                      Produkt dostępny wkrótce
+                    </p>
+                  )}
                   <p className="mt-4 text-sm leading-7 text-neutral-500">
                     {product.description}
                   </p>
@@ -129,12 +147,18 @@ const ShopPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={`/kontakt?produkt=${encodeURIComponent(product.name)}`}
-                    className="mt-6 inline-flex w-fit border-b border-gold pb-1 text-xs font-medium uppercase tracking-[0.16em] text-gold"
-                  >
-                    Zamów
-                  </Link>
+                  {product.comingSoon ? (
+                    <span className="mt-6 inline-flex w-fit border-b border-stone-300 pb-1 text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
+                      Wkrótce
+                    </span>
+                  ) : (
+                    <Link
+                      href={`/kontakt?produkt=${encodeURIComponent(product.name)}`}
+                      className="mt-6 inline-flex w-fit border-b border-gold pb-1 text-xs font-medium uppercase tracking-[0.16em] text-gold"
+                    >
+                      Zamów
+                    </Link>
+                  )}
                 </div>
               </article>
             ))}

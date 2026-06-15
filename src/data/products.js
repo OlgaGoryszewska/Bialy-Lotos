@@ -48,6 +48,7 @@ export const shopProducts = [
       'dostępność potwierdzana w salonie',
     ],
     featured: true,
+    comingSoon: true,
   },
   {
     name: 'Pielęgnacja ust po pigmentacji',
@@ -62,6 +63,7 @@ export const shopProducts = [
       'zalecany zgodnie z instrukcją pozabiegową',
     ],
     featured: false,
+    comingSoon: true,
   },
   {
     name: 'SPF po zabiegach laserowych',
@@ -76,6 +78,7 @@ export const shopProducts = [
       'pomaga chronić skórę przed przebarwieniami',
     ],
     featured: true,
+    comingSoon: true,
   },
   {
     name: 'Krem regenerujący po laserze',
@@ -90,6 +93,7 @@ export const shopProducts = [
       'odbiór lub zamówienie przez salon',
     ],
     featured: false,
+    comingSoon: true,
   },
   {
     name: 'Dobór pielęgnacji domowej',
@@ -104,6 +108,7 @@ export const shopProducts = [
       'możliwość połączenia z wizytą',
     ],
     featured: true,
+    comingSoon: true,
   },
   {
     name: 'Pakiet rozświetlenia skóry',
@@ -118,6 +123,7 @@ export const shopProducts = [
       'zakres ustalany indywidualnie',
     ],
     featured: false,
+    comingSoon: true,
   },
   {
     name: 'Pakiet po depilacji laserowej',
@@ -132,5 +138,6 @@ export const shopProducts = [
       'wspiera komfort między wizytami',
     ],
     featured: false,
+    comingSoon: true,
   },
 ]

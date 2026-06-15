@@ -11,6 +11,14 @@ import FaceDetail from '../assets/img/faceNoice.jpg'
 import FaceHorizontal from '../assets/img/faceNoiceHorisontal.jpg'
 import OwnerImage from '../assets/img/SylwiaJola.jpg'
 import SalonImage from '../assets/img/sylwia.jpg'
+import co2Image from '../assets/img/co2_01.png'
+import hifuImage from '../assets/img/hifu_01.png'
+import laserDepilationImage from '../assets/img/laser_dep_01.png'
+import pmuBrowsImage from '../assets/img/pmu_brwi_01.jpg'
+import pmuRemovalImage from '../assets/img/pmu_rem_01.png'
+import productImage from '../assets/img/product_01.png'
+import voucherImage200 from '../assets/img/voucher_200zl.png'
+import voucherImage500 from '../assets/img/voucher_500zl.png'
 
 const bookingUrl =
   'https://booksy.com/pl-pl/142271_salon-pieknosci-bialy-lotos_salon-kosmetyczny_4495_ciechanow#ba_s=seo'
@@ -35,26 +43,31 @@ const specializations = [
     title: 'Makijaż Permanentny',
     description: 'Brwi, usta oraz kreski podkreślające naturalne piękno.',
     href: '/brwi-permanentne-ciechanow',
+    image: pmuBrowsImage,
   },
   {
     title: 'HIFU',
     description: 'Niechirurgiczny lifting twarzy i poprawa owalu.',
     href: '/hifu-ciechanow',
+    image: hifuImage,
   },
   {
     title: 'Laser Frakcyjny CO2',
     description: 'Redukcja zmarszczek, blizn i przebarwień.',
     href: '/laser-frakcyjny-co2-ciechanow',
+    image: co2Image,
   },
   {
     title: 'Depilacja Laserowa',
     description: 'Gładka skóra bez codziennego golenia.',
     href: '/depilacja-laserowa-ciechanow',
+    image: laserDepilationImage,
   },
   {
     title: 'Usuwanie Makijażu Permanentnego',
     description: 'Bezpieczne usuwanie niechcianego pigmentu.',
     href: '/usuwanie-makijazu-permanentnego-ciechanow',
+    image: pmuRemovalImage,
   },
 ]
 
@@ -179,6 +192,16 @@ const shopPreview = shopProducts
   .filter((product) => product.featured)
   .slice(0, 3)
 
+const voucherImagesByName = {
+  'Voucher podarunkowy': voucherImage200,
+  'Voucher premium': voucherImage500,
+}
+
+const getShopPreviewImage = (product) =>
+  product.category === 'Vouchery'
+    ? (voucherImagesByName[product.name] ?? voucherImage200)
+    : productImage
+
 const SectionHeader = ({ eyebrow, title, description, align = 'center' }) => (
   <header
     className={`space-y-3 ${align === 'left' ? 'text-left' : 'mx-auto max-w-3xl text-center'}`}
@@ -299,19 +322,26 @@ const HomePage = () => {
               {specializations.map((specialization) => (
                 <article
                   key={specialization.title}
-                  className="flex min-h-[270px] flex-col justify-between rounded-lg border border-stone-200 bg-white p-5 shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
+                  className="flex min-h-[360px] flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
                 >
-                  <div className="space-y-4">
-                    <h3 className="font-dmserif text-2xl font-normal leading-tight text-neutral-900">
-                      {specialization.title}
-                    </h3>
-                    <p className="text-sm leading-7 text-neutral-500">
-                      {specialization.description}
-                    </p>
+                  <Image
+                    src={specialization.image}
+                    alt={specialization.title}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="flex flex-1 flex-col justify-between p-5">
+                    <div className="space-y-4">
+                      <h3 className="font-dmserif text-2xl font-normal leading-tight text-neutral-900">
+                        {specialization.title}
+                      </h3>
+                      <p className="text-sm leading-7 text-neutral-500">
+                        {specialization.description}
+                      </p>
+                    </div>
+                    <GoldLink href={specialization.href}>
+                      Dowiedz się więcej
+                    </GoldLink>
                   </div>
-                  <GoldLink href={specialization.href}>
-                    Dowiedz się więcej
-                  </GoldLink>
                 </article>
               ))}
             </div>
@@ -334,20 +364,32 @@ const HomePage = () => {
                 <Link
                   key={product.name}
                   href="/sklep"
-                  className="rounded-lg border border-stone-200 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-transform hover:-translate-y-1"
+                  className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-transform hover:-translate-y-1"
                 >
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
-                    {product.category}
-                  </p>
-                  <h3 className="mt-3 font-dmserif text-2xl font-normal leading-tight text-neutral-900">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 text-sm font-medium text-gold">
-                    {product.price}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-neutral-500">
-                    {product.description}
-                  </p>
+                  <Image
+                    src={getShopPreviewImage(product)}
+                    alt={product.name}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="p-6">
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
+                      {product.category}
+                    </p>
+                    <h3 className="mt-3 font-dmserif text-2xl font-normal leading-tight text-neutral-900">
+                      {product.name}
+                    </h3>
+                    <p className="mt-2 text-sm font-medium text-gold">
+                      {product.price}
+                    </p>
+                    {product.comingSoon && (
+                      <p className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
+                        Wkrótce
+                      </p>
+                    )}
+                    <p className="mt-3 text-sm leading-7 text-neutral-500">
+                      {product.description}
+                    </p>
+                  </div>
                 </Link>
               ))}
             </div>

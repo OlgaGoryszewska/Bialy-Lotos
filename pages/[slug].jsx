@@ -13,6 +13,8 @@ import beautyImage from '../src/assets/img/faceNoice.jpg'
 import co2Image from '../src/assets/img/co2_01.png'
 import hifuImage from '../src/assets/img/hifu_01.png'
 import laserDepilationImage from '../src/assets/img/laser_dep_01.png'
+import laminationImageOne from '../src/assets/img/lifting_01.png'
+import laminationImageTwo from '../src/assets/img/lifting_02.png'
 import microImage from '../src/assets/img/micro_01.png'
 import peelingImage from '../src/assets/img/peeling_01.png'
 import earPiercingImage from '../src/assets/img/uszy_01.jpg'
@@ -35,6 +37,7 @@ const instagramUrl = 'https://www.instagram.com/_bialylotos_/'
 const galleryImages = [faceImage, portraitImage, salonImage, beautyImage]
 const pmuBrowsImages = [pmuBrowsImageOne, pmuBrowsImageTwo]
 const pmuEyeImages = [pmuEyeImageOne, pmuEyeImageTwo, pmuEyeImageThree]
+const laminationImages = [laminationImageOne, laminationImageTwo]
 const pmuLipsImages = [pmuLipsImageOne, pmuLipsImageTwo, pmuLipsImageThree]
 const pmuRemovalImages = [
   pmuRemovalImageOne,
@@ -47,6 +50,7 @@ const heroImagesBySlug = {
   'depilacja-laserowa-ciechanow': laserDepilationImage,
   'hifu-ciechanow': hifuImage,
   'kreski-permanentne-ciechanow': pmuEyeImageOne,
+  'lifting-rzes-ciechanow': laminationImageOne,
   'laser-frakcyjny-co2-ciechanow': co2Image,
   'mezoterapia-mikroiglowa-ciechanow': microImage,
   'peeling-weglowy-ciechanow': peelingImage,
@@ -58,6 +62,7 @@ const heroImagesBySlug = {
 const galleryImagesBySlug = {
   'brwi-permanentne-ciechanow': pmuBrowsImages,
   'kreski-permanentne-ciechanow': pmuEyeImages,
+  'lifting-rzes-ciechanow': laminationImages,
   'usuwanie-makijazu-permanentnego-ciechanow': pmuRemovalImages,
   'usta-permanentne-ciechanow': pmuLipsImages,
 }
