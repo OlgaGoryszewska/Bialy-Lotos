@@ -10,14 +10,65 @@ import faceImage from '../src/assets/img/faceNoiceHorisontal.jpg'
 import portraitImage from '../src/assets/img/faceTwo.png'
 import salonImage from '../src/assets/img/sylwia.jpg'
 import beautyImage from '../src/assets/img/faceNoice.jpg'
+import co2Image from '../src/assets/img/co2_01.png'
+import hifuImage from '../src/assets/img/hifu_01.png'
+import laserDepilationImage from '../src/assets/img/laser_dep_01.png'
+import microImage from '../src/assets/img/micro_01.png'
+import peelingImage from '../src/assets/img/peeling_01.png'
+import earPiercingImage from '../src/assets/img/uszy_01.jpg'
+import pmuBrowsImageOne from '../src/assets/img/pmu_brwi_01.jpg'
+import pmuBrowsImageTwo from '../src/assets/img/pmu_brwi_02.jpg'
+import pmuEyeImageOne from '../src/assets/img/pmu_eye_01.jpg'
+import pmuEyeImageTwo from '../src/assets/img/pmu_eye_02.jpg'
+import pmuEyeImageThree from '../src/assets/img/pmu_eye_03.jpg'
+import pmuLipsImageOne from '../src/assets/img/pmu_usta-01.jpg'
+import pmuLipsImageTwo from '../src/assets/img/pmu_usta_02.jpg'
+import pmuLipsImageThree from '../src/assets/img/pmu_usta_03.jpg'
+import pmuRemovalImageOne from '../src/assets/img/pmu_rem_01.png'
+import pmuRemovalImageTwo from '../src/assets/img/pmu_rem_02.png'
+import pmuRemovalImageThree from '../src/assets/img/pmu_rem_03.png'
 
 const bookingUrl =
   'https://booksy.com/pl-pl/142271_salon-pieknosci-bialy-lotos_salon-kosmetyczny_4495_ciechanow#ba_s=seo'
+const instagramUrl = 'https://www.instagram.com/_bialylotos_/'
 
 const galleryImages = [faceImage, portraitImage, salonImage, beautyImage]
+const pmuBrowsImages = [pmuBrowsImageOne, pmuBrowsImageTwo]
+const pmuEyeImages = [pmuEyeImageOne, pmuEyeImageTwo, pmuEyeImageThree]
+const pmuLipsImages = [pmuLipsImageOne, pmuLipsImageTwo, pmuLipsImageThree]
+const pmuRemovalImages = [
+  pmuRemovalImageOne,
+  pmuRemovalImageTwo,
+  pmuRemovalImageThree,
+]
+
+const heroImagesBySlug = {
+  'brwi-permanentne-ciechanow': pmuBrowsImageOne,
+  'depilacja-laserowa-ciechanow': laserDepilationImage,
+  'hifu-ciechanow': hifuImage,
+  'kreski-permanentne-ciechanow': pmuEyeImageOne,
+  'laser-frakcyjny-co2-ciechanow': co2Image,
+  'mezoterapia-mikroiglowa-ciechanow': microImage,
+  'peeling-weglowy-ciechanow': peelingImage,
+  'usuwanie-makijazu-permanentnego-ciechanow': pmuRemovalImageOne,
+  'usta-permanentne-ciechanow': pmuLipsImageOne,
+  'przekluwanie-uszu-ciechanow': earPiercingImage,
+}
+
+const galleryImagesBySlug = {
+  'brwi-permanentne-ciechanow': pmuBrowsImages,
+  'kreski-permanentne-ciechanow': pmuEyeImages,
+  'usuwanie-makijazu-permanentnego-ciechanow': pmuRemovalImages,
+  'usta-permanentne-ciechanow': pmuLipsImages,
+}
 
 const sectionClass =
   'rounded-lg border border-stone-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.06)]'
+
+const effectsIntro =
+  'Zobacz przykładowe efekty i charakter pracy, aby łatwiej wybrać zabieg dopasowany do Twoich oczekiwań.'
+
+const serviceSlugsWithoutEffects = ['depilacja-laserowa-ciechanow']
 
 const defaultProblems = [
   'chcesz poprawić wygląd bez codziennego pośpiechu przy lustrze',
@@ -171,6 +222,13 @@ const ServicePage = ({ service }) => {
   const effectGallery = getEffectGalleryByServiceSlug(service.slug)
   const effectDescriptions =
     effectGallery?.effects ?? getFallbackEffects(service)
+  const heroImage = heroImagesBySlug[service.slug] ?? faceImage
+  const serviceGalleryImages = galleryImagesBySlug[service.slug]
+  const isSimpleGallery = Boolean(serviceGalleryImages)
+  const showEffectsSection = !serviceSlugsWithoutEffects.includes(service.slug)
+  const visibleEffectDescriptions = isSimpleGallery
+    ? effectDescriptions.slice(0, serviceGalleryImages.length)
+    : effectDescriptions
 
   return (
     <div className="min-h-screen bg-white">
@@ -202,7 +260,7 @@ const ServicePage = ({ service }) => {
           </div>
           <div className="overflow-hidden rounded-lg border border-stone-200 shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
             <Image
-              src={faceImage}
+              src={heroImage}
               alt={`${service.title} w salonie Biały Lotos`}
               className="h-full w-full object-cover"
               priority
@@ -234,55 +292,88 @@ const ServicePage = ({ service }) => {
           </ul>
         </section>
 
-        <section className={sectionClass}>
-          <h2 className="font-dmserif text-3xl font-normal text-neutral-900">
-            Efekty
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-neutral-500">
-            {effectGallery?.description ??
-              'Galeria efektów przed i po. Zdjęcia są miejscem na materiały salonu, które warto regularnie uzupełniać dla najmocniejszego SEO.'}
-          </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {effectDescriptions.map((effect, index) => {
-              const beforeImage = galleryImages[index % galleryImages.length]
-              const afterImage =
-                galleryImages[(index + 1) % galleryImages.length]
+        {showEffectsSection && (
+          <section className={sectionClass}>
+            <h2 className="font-dmserif text-3xl font-normal text-neutral-900">
+              Efekty
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-neutral-500">
+              {effectsIntro}
+            </p>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex border-b border-gold pb-1 text-xs font-medium uppercase tracking-[0.16em] text-gold"
+            >
+              Zobacz więcej efektów na Instagramie
+            </a>
+            <div
+              className={`mt-6 grid gap-5 ${
+                isSimpleGallery ? 'md:grid-cols-3' : 'md:grid-cols-2'
+              }`}
+            >
+              {visibleEffectDescriptions.map((effect, index) => {
+                if (isSimpleGallery) {
+                  const image = serviceGalleryImages[index]
 
-              return (
-                <article
-                  key={`${service.slug}-effect-${index + 1}`}
-                  className="overflow-hidden rounded-lg border border-stone-200 bg-white"
-                >
-                  <div className="grid grid-cols-2">
-                    <div className="relative">
+                  return (
+                    <article
+                      key={`${service.slug}-effect-${index + 1}`}
+                      className="overflow-hidden rounded-lg border border-stone-200 bg-white"
+                    >
                       <Image
-                        src={beforeImage}
-                        alt={`${service.title} zdjęcie przed ${index + 1}`}
+                        src={image}
+                        alt={`${service.title} efekt ${index + 1}`}
                         className="aspect-[4/5] h-full w-full object-cover"
                       />
-                      <span className="absolute left-3 top-3 bg-white/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-neutral-500 backdrop-blur">
-                        Przed
-                      </span>
+                      <p className="min-h-[88px] px-5 py-4 text-sm leading-7 text-neutral-500">
+                        {effect}
+                      </p>
+                    </article>
+                  )
+                }
+
+                const beforeImage = galleryImages[index % galleryImages.length]
+                const afterImage =
+                  galleryImages[(index + 1) % galleryImages.length]
+
+                return (
+                  <article
+                    key={`${service.slug}-effect-${index + 1}`}
+                    className="overflow-hidden rounded-lg border border-stone-200 bg-white"
+                  >
+                    <div className="grid grid-cols-2">
+                      <div className="relative">
+                        <Image
+                          src={beforeImage}
+                          alt={`${service.title} zdjęcie przed ${index + 1}`}
+                          className="aspect-[4/5] h-full w-full object-cover"
+                        />
+                        <span className="absolute left-3 top-3 bg-white/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-neutral-500 backdrop-blur">
+                          Przed
+                        </span>
+                      </div>
+                      <div className="relative border-l border-white">
+                        <Image
+                          src={afterImage}
+                          alt={`${service.title} zdjęcie po ${index + 1}`}
+                          className="aspect-[4/5] h-full w-full object-cover"
+                        />
+                        <span className="absolute left-3 top-3 bg-white/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-gold backdrop-blur">
+                          Po
+                        </span>
+                      </div>
                     </div>
-                    <div className="relative border-l border-white">
-                      <Image
-                        src={afterImage}
-                        alt={`${service.title} zdjęcie po ${index + 1}`}
-                        className="aspect-[4/5] h-full w-full object-cover"
-                      />
-                      <span className="absolute left-3 top-3 bg-white/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-gold backdrop-blur">
-                        Po
-                      </span>
-                    </div>
-                  </div>
-                  <p className="min-h-[88px] px-5 py-4 text-sm leading-7 text-neutral-500">
-                    {effect}
-                  </p>
-                </article>
-              )
-            })}
-          </div>
-        </section>
+                    <p className="min-h-[88px] px-5 py-4 text-sm leading-7 text-neutral-500">
+                      {effect}
+                    </p>
+                  </article>
+                )
+              })}
+            </div>
+          </section>
+        )}
 
         <section className={sectionClass}>
           <h2 className="font-dmserif text-3xl font-normal text-neutral-900">

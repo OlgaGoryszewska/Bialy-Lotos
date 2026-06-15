@@ -190,6 +190,49 @@ export const serviceCategories = [
       },
     ],
   },
+  {
+    title: 'Przekłuwanie',
+    description:
+      'Estetyczne przekłuwanie uszu i nosa oraz wymiana kolczyków po pełnym zagojeniu.',
+    services: [
+      {
+        title: 'Przekłuwanie uszu',
+        slug: 'przekluwanie-uszu-ciechanow',
+        description:
+          'Przekłuwanie uszu w Ciechanowie, obejmujące płatek ucha oraz wybrane przekłucia w chrząstce.',
+        highlights: [
+          'Możliwość przekłucia jednej lub dwóch dziurek',
+          'Opcje dla płatka ucha i chrząstki',
+          'Dobór kolczyków oraz omówienie pielęgnacji po zabiegu',
+        ],
+        priceSectionTitles: ['Przekłuwanie uszu'],
+      },
+      {
+        title: 'Przekłuwanie nosa',
+        slug: 'przekluwanie-nosa-ciechanow',
+        description:
+          'Przekłuwanie nosa w Ciechanowie wykonywane z naciskiem na higienę, estetykę i spokojne omówienie pielęgnacji.',
+        highlights: [
+          'Konsultacja przed przekłuciem',
+          'Precyzyjne wyznaczenie miejsca przekłucia',
+          'Zalecenia pielęgnacyjne po wizycie',
+        ],
+        priceSectionTitles: ['Przekłuwanie nosa'],
+      },
+      {
+        title: 'Wymiana kolczyków po zagojeniu',
+        slug: 'wymiana-kolczykow-ciechanow',
+        description:
+          'Wymiana kolczyków po zagojeniu przekłucia dla osób, które chcą zrobić to bezpiecznie i komfortowo.',
+        highlights: [
+          'Ocena, czy przekłucie jest już wygojone',
+          'Delikatna wymiana biżuterii',
+          'Wskazówki dotyczące dalszej pielęgnacji',
+        ],
+        priceSectionTitles: ['Wymiana kolczyków po zagojeniu'],
+      },
+    ],
+  },
 ]
 
 export const servicePages = serviceCategories.flatMap((category) =>

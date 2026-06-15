@@ -4,9 +4,9 @@ import Link from 'next/link'
 import React from 'react'
 import { Nav } from '../src/components/Nav'
 import { serviceCategories } from '../src/data/services'
-import faceImage from '../src/assets/img/faceNoice.jpg'
+import faceImage from '../src/assets/img/face_02.jpg'
 import treatmentImage from '../src/assets/img/faceNoiceHorisontal.jpg'
-import portraitImage from '../src/assets/img/faceTwo.png'
+import portraitImage from '../src/assets/img/face_01.png'
 
 const featureImages = [
   {
