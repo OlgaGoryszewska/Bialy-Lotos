@@ -57,6 +57,19 @@ export const effectGalleries = [
     ],
   },
   {
+    title: 'Usuwanie PMU',
+    slug: 'usuwanie-pmu',
+    serviceSlugs: ['usuwanie-makijazu-permanentnego-ciechanow'],
+    description:
+      'Efekty laserowego usuwania makijażu permanentnego: stopniowe rozjaśnianie pigmentu i przygotowanie skóry do dalszego planu.',
+    effects: [
+      'Rozjaśnianie starego pigmentu prowadzone etapowo.',
+      'Praca laserem pikosekundowym nad niechcianym makijażem permanentnym.',
+      'Zmniejszenie widoczności pigmentu po dobraniu parametrów do skóry.',
+      'Efekt usuwania oceniany indywidualnie po konsultacji i kolejnych wizytach.',
+    ],
+  },
+  {
     title: 'HIFU',
     slug: 'hifu',
     serviceSlugs: ['hifu-ciechanow'],
@@ -95,6 +108,30 @@ export const effectGalleries = [
     ],
   },
   {
+    title: 'Mezoterapia mikroigłowa',
+    slug: 'mezoterapia-mikroiglowa',
+    serviceSlugs: ['mezoterapia-mikroiglowa-ciechanow'],
+    description:
+      'Efekty mezoterapii mikroigłowej: wsparcie regeneracji skóry, odświeżenie i poprawa wyglądu cery.',
+    effects: [
+      'Stymulacja skóry do naturalnej regeneracji.',
+      'Odświeżenie wyglądu cery wymagającej odnowy.',
+      'Zabieg dobierany do kondycji skóry i oczekiwanego efektu.',
+    ],
+  },
+  {
+    title: 'Peeling węglowy',
+    slug: 'peeling-weglowy',
+    serviceSlugs: ['peeling-weglowy-ciechanow'],
+    description:
+      'Efekty peelingu węglowego: oczyszczenie skóry, odświeżenie i wygładzenie wyglądu cery.',
+    effects: [
+      'Oczyszczenie skóry z użyciem preparatu węglowego i lasera.',
+      'Skóra wyglądająca na świeższą i bardziej gładką.',
+      'Zabieg dla cery wymagającej odświeżenia i wyrównania.',
+    ],
+  },
+  {
     title: 'Depilacja',
     slug: 'depilacja',
     serviceSlugs: ['depilacja-laserowa-ciechanow'],
@@ -111,6 +148,80 @@ export const effectGalleries = [
       'Mniej podrażnień związanych z tradycyjną depilacją.',
       'Wygodniejsza pielęgnacja skóry na co dzień.',
       'Efekt wymagający regularności i odpowiednich odstępów między wizytami.',
+    ],
+  },
+  {
+    title: 'Pigmentacja skóry głowy',
+    slug: 'pigmentacja-skory-glowy',
+    serviceSlugs: [],
+    description:
+      'Efekty pigmentacji skóry głowy: optyczne zagęszczenie linii włosów i subtelne uzupełnienie przerzedzeń.',
+    effects: [
+      'Optyczne zagęszczenie obszaru przy linii włosów.',
+      'Pigmentacja dobrana do koloru włosów i skóry.',
+      'Efekt uzupełnienia przerzedzeń widoczny w realizacji przed i po.',
+    ],
+  },
+  {
+    title: 'Laminacja brwi',
+    slug: 'laminacja-brwi',
+    serviceSlugs: ['laminacja-brwi-ciechanow'],
+    description:
+      'Efekty laminacji brwi: uporządkowanie włosków, optyczne zagęszczenie i zadbana oprawa oka.',
+    effects: [
+      'Ułożenie włosków i bardziej uporządkowany kształt brwi.',
+      'Optycznie pełniejsza oprawa oka po stylizacji.',
+      'Efekt zadbanych brwi bez codziennego układania.',
+    ],
+  },
+  {
+    title: 'Laminacja rzęs',
+    slug: 'laminacja-rzes',
+    serviceSlugs: ['lifting-rzes-ciechanow'],
+    description:
+      'Efekty laminacji i liftingu rzęs: naturalne podkręcenie, podkreślenie spojrzenia i bardziej uporządkowana oprawa oka.',
+    effects: [
+      'Naturalne uniesienie rzęs i delikatnie bardziej otwarte spojrzenie.',
+      'Podkreślenie rzęs bez konieczności codziennego używania zalotki.',
+      'Efekt zadbanych, uporządkowanych rzęs po laminacji.',
+    ],
+  },
+  {
+    title: 'Przedłużanie rzęs UV',
+    slug: 'przedluzanie-rzes',
+    serviceSlugs: ['przedluzanie-rzes-ciechanow'],
+    description:
+      'Efekty stylizacji rzęs metodą UV: od subtelnego zagęszczenia po bardziej wyraziste objętości.',
+    effects: [
+      'Stylizacja UV dopasowana do kształtu oka i oczekiwanego efektu.',
+      'Rzęsy o uporządkowanej linii i estetycznej objętości.',
+      'Delikatne zagęszczenie dla naturalnego podkreślenia spojrzenia.',
+      'Bardziej wyrazista oprawa oka przy zachowaniu lekkości stylizacji.',
+      'Efekt dopasowany do codziennego makijażu klientki.',
+      'Stylizacja rzęs z równą linią i starannym wykończeniem.',
+      'Podkreślenie spojrzenia bez przerysowanego efektu.',
+      'Objętość dobrana do naturalnych rzęs i preferencji klientki.',
+      'Przykład realizacji UV pokazujący charakter pracy salonu.',
+    ],
+  },
+  {
+    title: 'Przekłuwanie uszu',
+    slug: 'przekluwanie-uszu',
+    serviceSlugs: ['przekluwanie-uszu-ciechanow'],
+    description:
+      'Realizacje przekłuwania uszu: estetyczne umiejscowienie kolczyka i omówiona pielęgnacja po zabiegu.',
+    effects: [
+      'Precyzyjnie dobrane miejsce przekłucia z uwzględnieniem anatomii ucha.',
+    ],
+  },
+  {
+    title: 'Przekłuwanie nosa',
+    slug: 'przekluwanie-nosa',
+    serviceSlugs: ['przekluwanie-nosa-ciechanow'],
+    description:
+      'Realizacje przekłuwania nosa: subtelna biżuteria, higiena pracy i spokojne omówienie pielęgnacji.',
+    effects: [
+      'Delikatne przekłucie nosa z biżuterią dobraną do urody klientki.',
     ],
   },
 ]

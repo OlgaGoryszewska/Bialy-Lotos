@@ -5,6 +5,7 @@ import React from 'react'
 import { Nav } from '../src/components/Nav'
 import { priceGroups } from '../src/data/cennik'
 import { getEffectGalleryByServiceSlug } from '../src/data/effects'
+import { getServiceImagesBySlug } from '../src/data/effectImages'
 import { getServiceBySlug, servicePages } from '../src/data/services'
 import faceImage from '../src/assets/img/faceNoiceHorisontal.jpg'
 import portraitImage from '../src/assets/img/faceTwo.png'
@@ -13,58 +14,21 @@ import beautyImage from '../src/assets/img/faceNoice.jpg'
 import co2Image from '../src/assets/img/co2_01.png'
 import hifuImage from '../src/assets/img/hifu_01.png'
 import laserDepilationImage from '../src/assets/img/laser_dep_01.png'
-import laminationImageOne from '../src/assets/img/lifting_01.png'
-import laminationImageTwo from '../src/assets/img/lifting_02.png'
 import microImage from '../src/assets/img/micro_01.png'
 import peelingImage from '../src/assets/img/peeling_01.png'
-import earPiercingImage from '../src/assets/img/uszy_01.jpg'
-import pmuBrowsImageOne from '../src/assets/img/pmu_brwi_01.jpg'
-import pmuBrowsImageTwo from '../src/assets/img/pmu_brwi_02.jpg'
-import pmuEyeImageOne from '../src/assets/img/pmu_eye_01.jpg'
-import pmuEyeImageTwo from '../src/assets/img/pmu_eye_02.jpg'
-import pmuEyeImageThree from '../src/assets/img/pmu_eye_03.jpg'
-import pmuLipsImageOne from '../src/assets/img/pmu_usta-01.jpg'
-import pmuLipsImageTwo from '../src/assets/img/pmu_usta_02.jpg'
-import pmuLipsImageThree from '../src/assets/img/pmu_usta_03.jpg'
-import pmuRemovalImageOne from '../src/assets/img/pmu_rem_01.png'
-import pmuRemovalImageTwo from '../src/assets/img/pmu_rem_02.png'
-import pmuRemovalImageThree from '../src/assets/img/pmu_rem_03.png'
 
 const bookingUrl =
   'https://booksy.com/pl-pl/142271_salon-pieknosci-bialy-lotos_salon-kosmetyczny_4495_ciechanow#ba_s=seo'
 const instagramUrl = 'https://www.instagram.com/_bialylotos_/'
 
 const galleryImages = [faceImage, portraitImage, salonImage, beautyImage]
-const pmuBrowsImages = [pmuBrowsImageOne, pmuBrowsImageTwo]
-const pmuEyeImages = [pmuEyeImageOne, pmuEyeImageTwo, pmuEyeImageThree]
-const laminationImages = [laminationImageOne, laminationImageTwo]
-const pmuLipsImages = [pmuLipsImageOne, pmuLipsImageTwo, pmuLipsImageThree]
-const pmuRemovalImages = [
-  pmuRemovalImageOne,
-  pmuRemovalImageTwo,
-  pmuRemovalImageThree,
-]
 
 const heroImagesBySlug = {
-  'brwi-permanentne-ciechanow': pmuBrowsImageOne,
   'depilacja-laserowa-ciechanow': laserDepilationImage,
   'hifu-ciechanow': hifuImage,
-  'kreski-permanentne-ciechanow': pmuEyeImageOne,
-  'lifting-rzes-ciechanow': laminationImageOne,
   'laser-frakcyjny-co2-ciechanow': co2Image,
   'mezoterapia-mikroiglowa-ciechanow': microImage,
   'peeling-weglowy-ciechanow': peelingImage,
-  'usuwanie-makijazu-permanentnego-ciechanow': pmuRemovalImageOne,
-  'usta-permanentne-ciechanow': pmuLipsImageOne,
-  'przekluwanie-uszu-ciechanow': earPiercingImage,
-}
-
-const galleryImagesBySlug = {
-  'brwi-permanentne-ciechanow': pmuBrowsImages,
-  'kreski-permanentne-ciechanow': pmuEyeImages,
-  'lifting-rzes-ciechanow': laminationImages,
-  'usuwanie-makijazu-permanentnego-ciechanow': pmuRemovalImages,
-  'usta-permanentne-ciechanow': pmuLipsImages,
 }
 
 const sectionClass =
@@ -73,7 +37,7 @@ const sectionClass =
 const effectsIntro =
   'Zobacz przykładowe efekty i charakter pracy, aby łatwiej wybrać zabieg dopasowany do Twoich oczekiwań.'
 
-const serviceSlugsWithoutEffects = ['depilacja-laserowa-ciechanow']
+const serviceSlugsWithoutEffects = []
 
 const defaultProblems = [
   'chcesz poprawić wygląd bez codziennego pośpiechu przy lustrze',
@@ -227,18 +191,19 @@ const ServicePage = ({ service }) => {
   const effectGallery = getEffectGalleryByServiceSlug(service.slug)
   const effectDescriptions =
     effectGallery?.effects ?? getFallbackEffects(service)
-  const heroImage = heroImagesBySlug[service.slug] ?? faceImage
-  const serviceGalleryImages = galleryImagesBySlug[service.slug]
-  const isSimpleGallery = Boolean(serviceGalleryImages)
+  const serviceGalleryImages = getServiceImagesBySlug(service.slug)
+  const heroImage =
+    serviceGalleryImages[0]?.src ?? heroImagesBySlug[service.slug] ?? faceImage
+  const isSimpleGallery = serviceGalleryImages.length > 0
   const showEffectsSection = !serviceSlugsWithoutEffects.includes(service.slug)
-  const visibleEffectDescriptions = isSimpleGallery
-    ? effectDescriptions.slice(0, serviceGalleryImages.length)
+  const visibleEffects = isSimpleGallery
+    ? serviceGalleryImages
     : effectDescriptions
 
   return (
     <div className="min-h-screen bg-white">
       <Head>
-        <title>{service.title} Ciechanów | Biały Lotos</title>
+        <title>{`${service.title} Ciechanów | Biały Lotos`}</title>
         <meta name="description" content={service.description} />
       </Head>
       <Nav />
@@ -318,27 +283,35 @@ const ServicePage = ({ service }) => {
                 isSimpleGallery ? 'md:grid-cols-3' : 'md:grid-cols-2'
               }`}
             >
-              {visibleEffectDescriptions.map((effect, index) => {
+              {visibleEffects.map((item, index) => {
                 if (isSimpleGallery) {
-                  const image = serviceGalleryImages[index]
+                  const image = item
+                  const effect =
+                    effectDescriptions[index % effectDescriptions.length]
 
                   return (
                     <article
-                      key={`${service.slug}-effect-${index + 1}`}
+                      key={`${service.slug}-${image.name}`}
                       className="overflow-hidden rounded-lg border border-stone-200 bg-white"
                     >
                       <Image
-                        src={image}
-                        alt={`${service.title} efekt ${index + 1}`}
+                        src={image.src}
+                        alt={`${service.title}: ${image.name}`}
                         className="aspect-[4/5] h-full w-full object-cover"
                       />
-                      <p className="min-h-[88px] px-5 py-4 text-sm leading-7 text-neutral-500">
-                        {effect}
-                      </p>
+                      <div className="min-h-[128px] px-5 py-4">
+                        <p className="text-xs font-medium uppercase tracking-[0.16em] text-gold">
+                          {image.name}
+                        </p>
+                        <p className="mt-3 text-sm leading-7 text-neutral-500">
+                          {effect}
+                        </p>
+                      </div>
                     </article>
                   )
                 }
 
+                const effect = item
                 const beforeImage = galleryImages[index % galleryImages.length]
                 const afterImage =
                   galleryImages[(index + 1) % galleryImages.length]

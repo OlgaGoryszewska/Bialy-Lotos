@@ -3,14 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { effectGalleries } from '../data/effects'
+import { getGalleryImagesBySlug } from '../data/effectImages'
 import { shopProducts } from '../data/products'
 import { Nav } from '../components/Nav'
 import { GoogleMapEmbed } from '../components/PrivacyConsent'
 import Face from '../assets/img/faceTwo.png'
-import FaceDetail from '../assets/img/faceNoice.jpg'
-import FaceHorizontal from '../assets/img/faceNoiceHorisontal.jpg'
 import OwnerImage from '../assets/img/SylwiaJola.jpg'
-import SalonImage from '../assets/img/sylwia.jpg'
 import co2Image from '../assets/img/co2_01.png'
 import hifuImage from '../assets/img/hifu_01.png'
 import laserDepilationImage from '../assets/img/laser_dep_01.png'
@@ -103,43 +101,55 @@ const problemBlocks = [
   },
 ]
 
-const effectImages = [Face, FaceDetail, FaceHorizontal, SalonImage]
-
 const effectPreviewCategories = [
   'Brwi Permanentne',
   'Usta Permanentne',
-  'HIFU',
-  'Laser CO₂',
+  'Kreski',
   'Usuwanie PMU',
+  'Rzęsy',
 ]
 
-const effectPreview = [
-  ...effectGalleries
-    .filter((gallery) =>
-      ['brwi-permanentne', 'usta-permanentne', 'hifu', 'laser-co2'].includes(
-        gallery.slug
-      )
-    )
-    .flatMap((gallery) =>
-      gallery.effects.slice(0, 2).map((effect) => ({
-        category: gallery.title,
-        effect,
-        href: `/${gallery.serviceSlugs[0]}`,
-      }))
-    ),
-  {
-    category: 'Usuwanie PMU',
-    effect:
-      'Stopniowe rozjaśnianie starego pigmentu i przygotowanie skóry do dalszego planu.',
-    href: '/usuwanie-makijazu-permanentnego-ciechanow',
-  },
-  {
-    category: 'Usuwanie PMU',
-    effect:
-      'Bezpieczna praca z niechcianym makijażem permanentnym po konsultacji.',
-    href: '/usuwanie-makijazu-permanentnego-ciechanow',
-  },
+const effectPreviewSlugs = [
+  'brwi-permanentne',
+  'usta-permanentne',
+  'kreski',
+  'usuwanie-pmu',
+  'przedluzanie-rzes',
 ]
+
+const effectPreview = effectPreviewSlugs.flatMap((slug) => {
+  const gallery = effectGalleries.find((item) => item.slug === slug)
+  const images = getGalleryImagesBySlug(slug).slice(0, 2)
+
+  if (!gallery) {
+    return []
+  }
+
+  return images.map((image, index) => ({
+    category: gallery.title,
+    effect: gallery.effects[index % gallery.effects.length],
+    href: gallery.serviceSlugs[0] ? `/${gallery.serviceSlugs[0]}` : '/galeria',
+    image,
+  }))
+})
+
+const fallbackEffectPreview = effectGalleries
+  .filter((gallery) =>
+    ['brwi-permanentne', 'usta-permanentne', 'hifu', 'laser-co2'].includes(
+      gallery.slug
+    )
+  )
+  .flatMap((gallery) =>
+    gallery.effects.slice(0, 2).map((effect) => ({
+      category: gallery.title,
+      effect,
+      href: `/${gallery.serviceSlugs[0]}`,
+      image: null,
+    }))
+  )
+
+const visibleEffectPreview =
+  effectPreview.length > 0 ? effectPreview : fallbackEffectPreview
 
 const reviews = [
   'Najpiękniejsze brwi jakie miałam.',
@@ -448,50 +458,29 @@ const HomePage = () => {
               ))}
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-              {effectPreview.map((item, index) => {
-                const beforeImage = effectImages[index % effectImages.length]
-                const afterImage =
-                  effectImages[(index + 1) % effectImages.length]
-
-                return (
-                  <Link
-                    key={`${item.category}-${item.effect}`}
-                    href={item.href}
-                    className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
-                  >
-                    <div className="grid grid-cols-2">
-                      <div className="relative">
-                        <Image
-                          src={beforeImage}
-                          alt={`${item.category} zdjęcie przed`}
-                          className="aspect-[4/5] h-full w-full object-cover"
-                        />
-                        <span className="absolute left-2 top-2 bg-white/85 px-2 py-1 text-[0.58rem] font-medium uppercase tracking-[0.14em] text-neutral-500 backdrop-blur">
-                          Przed
-                        </span>
-                      </div>
-                      <div className="relative border-l border-white">
-                        <Image
-                          src={afterImage}
-                          alt={`${item.category} zdjęcie po`}
-                          className="aspect-[4/5] h-full w-full object-cover"
-                        />
-                        <span className="absolute left-2 top-2 bg-white/85 px-2 py-1 text-[0.58rem] font-medium uppercase tracking-[0.14em] text-gold backdrop-blur">
-                          Po
-                        </span>
-                      </div>
-                    </div>
-                    <div className="min-h-[152px] p-4">
-                      <p className="text-xs font-medium uppercase tracking-[0.16em] text-gold">
-                        {item.category}
-                      </p>
-                      <p className="mt-3 text-sm leading-7 text-neutral-500">
-                        {item.effect}
-                      </p>
-                    </div>
-                  </Link>
-                )
-              })}
+              {visibleEffectPreview.map((item) => (
+                <Link
+                  key={`${item.category}-${item.effect}`}
+                  href={item.href}
+                  className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
+                >
+                  {item.image ? (
+                    <Image
+                      src={item.image.src}
+                      alt={`${item.category}: ${item.image.name}`}
+                      className="aspect-[4/5] w-full object-cover"
+                    />
+                  ) : null}
+                  <div className="min-h-[152px] p-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.16em] text-gold">
+                      {item.category}
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-neutral-500">
+                      {item.effect}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
