@@ -37,7 +37,7 @@ export const Menu = () => {
         </span>
       </button>
       {showMenu && (
-        <div className="absolute right-0 top-full z-50 mt-3 w-[min(22rem,calc(100vw-2rem))] rounded-lg border border-white/70 bg-white/90 p-6 font-poppins shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-md lg:hidden">
+        <div className="absolute right-0 top-full z-50 mt-3 w-[min(22rem,calc(100vw-2rem))] rounded-lg border border-white/70 bg-white/95 p-6 font-poppins shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-md lg:hidden">
           <div className="grid gap-1">
             {navLinks.map((link) => (
               <Link

@@ -376,11 +376,18 @@ const HomePage = () => {
                   href="/sklep"
                   className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-transform hover:-translate-y-1"
                 >
-                  <Image
-                    src={getShopPreviewImage(product)}
-                    alt={product.name}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
+                  <div className="relative">
+                    <Image
+                      src={getShopPreviewImage(product)}
+                      alt={product.name}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                    {product.comingSoon && (
+                      <span className="absolute right-4 top-4 bg-neutral-900/85 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-white backdrop-blur">
+                        Wkrótce
+                      </span>
+                    )}
+                  </div>
                   <div className="p-6">
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
                       {product.category}
