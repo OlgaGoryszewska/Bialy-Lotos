@@ -30,7 +30,7 @@ const ZabiegiPage = () => {
         <title>Zabiegi | Biały Lotos</title>
         <meta
           name="description"
-          content="Centrum zabiegów Biały Lotos Ciechanów: PMU, kosmetologia premium, depilacja laserowa, laminacja brwi, lifting i przedłużanie rzęs."
+          content="Centrum zabiegów Biały Lotos Ciechanów: makijaż permanentny, naturalny włos 3D, przekłuwanie uszu, nanoigły Aurumaris, stylizacja brwi i rzęs oraz technologie laserowe."
         />
       </Head>
       <Nav />
@@ -82,6 +82,11 @@ const ZabiegiPage = () => {
                     href={`/${service.slug}`}
                     className="group rounded-lg border border-stone-100 bg-white p-4 transition-colors hover:border-gold"
                   >
+                    {service.isNew && (
+                      <span className="mb-2 inline-flex bg-gold px-2 py-1 text-[0.6rem] font-medium uppercase tracking-[0.16em] text-white">
+                        Nowość
+                      </span>
+                    )}
                     <h3 className="font-dmserif text-2xl font-normal text-neutral-900">
                       {service.title}
                     </h3>

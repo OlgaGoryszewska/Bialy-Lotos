@@ -2,7 +2,7 @@ export const effectGalleries = [
   {
     title: 'Brwi Permanentne',
     slug: 'brwi-permanentne',
-    serviceSlugs: ['brwi-permanentne-ciechanow'],
+    serviceSlugs: ['brwi-permanentne-ciechanow', 'naturalny-wlos-3d-ciechanow'],
     description:
       'Efekty pigmentacji brwi: wyrównanie kształtu, delikatne zagęszczenie optyczne i bardziej uporządkowana oprawa twarzy.',
     effects: [
@@ -59,7 +59,10 @@ export const effectGalleries = [
   {
     title: 'Usuwanie PMU',
     slug: 'usuwanie-pmu',
-    serviceSlugs: ['usuwanie-makijazu-permanentnego-ciechanow'],
+    serviceSlugs: [
+      'usuwanie-makijazu-permanentnego-ciechanow',
+      'usuwanie-kresek-permanentnych-ciechanow',
+    ],
     description:
       'Efekty laserowego usuwania makijażu permanentnego: stopniowe rozjaśnianie pigmentu i przygotowanie skóry do dalszego planu.',
     effects: [

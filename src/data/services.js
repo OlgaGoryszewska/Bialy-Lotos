@@ -22,6 +22,19 @@ export const serviceCategories = [
         ],
       },
       {
+        title: 'Naturalny włos 3D',
+        slug: 'naturalny-wlos-3d-ciechanow',
+        isNew: true,
+        description:
+          'Brwi permanentne metodą naturalnego włosa 3D w Ciechanowie: precyzyjnie rysowane włoski, które wyglądają jak Twoje własne brwi.',
+        highlights: [
+          'Efekt naturalnych, gęstszych brwi bez widocznego makijażu',
+          'Włoski rysowane zgodnie z kierunkiem wzrostu brwi',
+          'Idealne przy przerzedzonych brwiach i lukach',
+        ],
+        priceSectionTitles: ['Makijaż permanentny', 'Korekta po 6 tygodniach'],
+      },
+      {
         title: 'Usta permanentne',
         slug: 'usta-permanentne-ciechanow',
         description:
@@ -56,6 +69,19 @@ export const serviceCategories = [
         ],
       },
       {
+        title: 'Usuwanie kresek permanentnych',
+        slug: 'usuwanie-kresek-permanentnych-ciechanow',
+        isNew: true,
+        description:
+          'Laserowe usuwanie kresek permanentnych w Ciechanowie: bezpieczne rozjaśnianie starego lub nieudanego pigmentu w okolicy oka.',
+        highlights: [
+          'Usuwanie starych, rozmytych lub przebarwionych kresek',
+          'Praca etapowa z dbałością o delikatną okolicę oka',
+          'Możliwość przygotowania pod nową, estetyczną kreskę',
+        ],
+        priceSectionTitles: ['Usuwanie pigmentacji'],
+      },
+      {
         title: 'Usuwanie makijażu permanentnego',
         slug: 'usuwanie-makijazu-permanentnego-ciechanow',
         description:
@@ -70,33 +96,65 @@ export const serviceCategories = [
     ],
   },
   {
-    title: 'Kosmetologia Premium',
+    title: 'Przekłuwanie',
     description:
-      'Zaawansowane zabiegi aparaturowe i regeneracyjne dla skóry twarzy, szyi i dekoltu.',
+      'Estetyczne przekłuwanie uszu i nosa oraz wymiana kolczyków po pełnym zagojeniu.',
     services: [
       {
-        title: 'HIFU',
-        slug: 'hifu-ciechanow',
+        title: 'Przekłuwanie uszu',
+        slug: 'przekluwanie-uszu-ciechanow',
         description:
-          'HIFU w Ciechanowie to zabieg liftingujący, wspierający napięcie skóry bez klasycznej ingerencji chirurgicznej.',
+          'Przekłuwanie uszu w Ciechanowie, obejmujące płatek ucha oraz wybrane przekłucia w chrząstce.',
         highlights: [
-          'Technologia skoncentrowanych ultradźwięków',
-          'Zabieg dla skóry wymagającej ujędrnienia',
-          'Opcje dla całej twarzy lub dolnej części twarzy',
+          'Możliwość przekłucia jednej lub dwóch dziurek',
+          'Opcje dla płatka ucha i chrząstki',
+          'Dobór kolczyków oraz omówienie pielęgnacji po zabiegu',
         ],
-        priceSectionTitles: ['HIFU'],
+        priceSectionTitles: ['Przekłuwanie uszu'],
       },
       {
-        title: 'Laser frakcyjny CO2',
-        slug: 'laser-frakcyjny-co2-ciechanow',
+        title: 'Przekłuwanie nosa',
+        slug: 'przekluwanie-nosa-ciechanow',
         description:
-          'Laser frakcyjny CO2 w Ciechanowie dla skóry wymagającej przebudowy, wygładzenia i regeneracji.',
+          'Przekłuwanie nosa w Ciechanowie wykonywane z naciskiem na higienę, estetykę i spokojne omówienie pielęgnacji.',
         highlights: [
-          'Praca nad teksturą i jakością skóry',
-          'Możliwość zabiegu na twarz, szyję i wybrane partie',
-          'Dobór parametrów do potrzeb skóry',
+          'Konsultacja przed przekłuciem',
+          'Precyzyjne wyznaczenie miejsca przekłucia',
+          'Zalecenia pielęgnacyjne po wizycie',
         ],
-        priceSectionTitles: ['Laser frakcyjny CO2'],
+        priceSectionTitles: ['Przekłuwanie nosa'],
+      },
+      {
+        title: 'Wymiana kolczyków po zagojeniu',
+        slug: 'wymiana-kolczykow-ciechanow',
+        description:
+          'Wymiana kolczyków po zagojeniu przekłucia dla osób, które chcą zrobić to bezpiecznie i komfortowo.',
+        highlights: [
+          'Ocena, czy przekłucie jest już wygojone',
+          'Delikatna wymiana biżuterii',
+          'Wskazówki dotyczące dalszej pielęgnacji',
+        ],
+        priceSectionTitles: ['Wymiana kolczyków po zagojeniu'],
+      },
+    ],
+  },
+  {
+    title: 'Zabiegi na twarz',
+    description:
+      'Nowoczesne zabiegi odmładzające i regeneracyjne dla skóry twarzy, szyi i dekoltu.',
+    services: [
+      {
+        title: 'Nanoigły Aurumaris',
+        slug: 'nanoigly-aurumaris-ciechanow',
+        isNew: true,
+        description:
+          'Zabieg nanoigłami Aurumaris na twarz w Ciechanowie: odżywienie, rozświetlenie i odmłodzenie skóry bez okresu rekonwalescencji.',
+        highlights: [
+          'Wprowadzenie składników aktywnych w głąb skóry',
+          'Rozświetlenie, nawilżenie i poprawa napięcia skóry',
+          'Komfortowy zabieg bez długiej regeneracji',
+        ],
+        priceSectionTitles: [],
       },
       {
         title: 'Mezoterapia mikroigłowa',
@@ -121,25 +179,6 @@ export const serviceCategories = [
           'Efekt świeższej, gładszej skóry',
         ],
         priceSectionTitles: ['Peeling węglowy'],
-      },
-    ],
-  },
-  {
-    title: 'Depilacja',
-    description:
-      'Laserowe usuwanie owłosienia z wybranych partii twarzy i ciała.',
-    services: [
-      {
-        title: 'Depilacja laserowa',
-        slug: 'depilacja-laserowa-ciechanow',
-        description:
-          'Depilacja laserowa w Ciechanowie dla twarzy, pach, bikini, nóg, pleców i innych partii ciała.',
-        highlights: [
-          'Szeroki wybór partii zabiegowych',
-          'Możliwość łączenia obszarów w pakiety',
-          'Plan zabiegowy dobrany do skóry i włosa',
-        ],
-        priceSectionTitles: ['Depilacja laserowa'],
       },
     ],
   },
@@ -191,45 +230,45 @@ export const serviceCategories = [
     ],
   },
   {
-    title: 'Przekłuwanie',
+    title: 'Technologie laserowe',
     description:
-      'Estetyczne przekłuwanie uszu i nosa oraz wymiana kolczyków po pełnym zagojeniu.',
+      'HIFU, laser frakcyjny CO2 oraz depilacja laserowa twarzy i ciała.',
     services: [
       {
-        title: 'Przekłuwanie uszu',
-        slug: 'przekluwanie-uszu-ciechanow',
+        title: 'HIFU',
+        slug: 'hifu-ciechanow',
         description:
-          'Przekłuwanie uszu w Ciechanowie, obejmujące płatek ucha oraz wybrane przekłucia w chrząstce.',
+          'HIFU w Ciechanowie to zabieg liftingujący, wspierający napięcie skóry bez klasycznej ingerencji chirurgicznej.',
         highlights: [
-          'Możliwość przekłucia jednej lub dwóch dziurek',
-          'Opcje dla płatka ucha i chrząstki',
-          'Dobór kolczyków oraz omówienie pielęgnacji po zabiegu',
+          'Technologia skoncentrowanych ultradźwięków',
+          'Zabieg dla skóry wymagającej ujędrnienia',
+          'Opcje dla całej twarzy lub dolnej części twarzy',
         ],
-        priceSectionTitles: ['Przekłuwanie uszu'],
+        priceSectionTitles: ['HIFU'],
       },
       {
-        title: 'Przekłuwanie nosa',
-        slug: 'przekluwanie-nosa-ciechanow',
+        title: 'Laser frakcyjny CO2',
+        slug: 'laser-frakcyjny-co2-ciechanow',
         description:
-          'Przekłuwanie nosa w Ciechanowie wykonywane z naciskiem na higienę, estetykę i spokojne omówienie pielęgnacji.',
+          'Laser frakcyjny CO2 w Ciechanowie dla skóry wymagającej przebudowy, wygładzenia i regeneracji.',
         highlights: [
-          'Konsultacja przed przekłuciem',
-          'Precyzyjne wyznaczenie miejsca przekłucia',
-          'Zalecenia pielęgnacyjne po wizycie',
+          'Praca nad teksturą i jakością skóry',
+          'Możliwość zabiegu na twarz, szyję i wybrane partie',
+          'Dobór parametrów do potrzeb skóry',
         ],
-        priceSectionTitles: ['Przekłuwanie nosa'],
+        priceSectionTitles: ['Laser frakcyjny CO2'],
       },
       {
-        title: 'Wymiana kolczyków po zagojeniu',
-        slug: 'wymiana-kolczykow-ciechanow',
+        title: 'Depilacja laserowa',
+        slug: 'depilacja-laserowa-ciechanow',
         description:
-          'Wymiana kolczyków po zagojeniu przekłucia dla osób, które chcą zrobić to bezpiecznie i komfortowo.',
+          'Depilacja laserowa w Ciechanowie dla twarzy, pach, bikini, nóg, pleców i innych partii ciała.',
         highlights: [
-          'Ocena, czy przekłucie jest już wygojone',
-          'Delikatna wymiana biżuterii',
-          'Wskazówki dotyczące dalszej pielęgnacji',
+          'Szeroki wybór partii zabiegowych',
+          'Możliwość łączenia obszarów w pakiety',
+          'Plan zabiegowy dobrany do skóry i włosa',
         ],
-        priceSectionTitles: ['Wymiana kolczyków po zagojeniu'],
+        priceSectionTitles: ['Depilacja laserowa'],
       },
     ],
   },

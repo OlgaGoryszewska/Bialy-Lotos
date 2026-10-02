@@ -1,3 +1,4 @@
+import brwiWloskowe3d from '../assets/img/brwi-wloskowe-3d.jpg'
 import co2Image from '../assets/img/co2_01.png'
 import hifuImage from '../assets/img/hifu_01.png'
 import kolczykNos01 from '../assets/img/effects/kolczyk_nos_01.jpg'
@@ -136,6 +137,12 @@ export const serviceImageGroupsBySlug = {
   'usuwanie-makijazu-permanentnego-ciechanow':
     galleryImageGroupsBySlug['usuwanie-pmu'],
   'usta-permanentne-ciechanow': galleryImageGroupsBySlug['usta-permanentne'],
+  'usuwanie-kresek-permanentnych-ciechanow':
+    galleryImageGroupsBySlug['usuwanie-pmu'],
+  'naturalny-wlos-3d-ciechanow': [
+    { name: 'Naturalny włos 3D 01', src: brwiWloskowe3d },
+    ...galleryImageGroupsBySlug['brwi-permanentne'],
+  ],
   'wymiana-kolczykow-ciechanow': galleryImageGroupsBySlug['przekluwanie-uszu'],
 }
 

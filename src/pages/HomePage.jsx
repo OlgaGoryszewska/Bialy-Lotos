@@ -12,9 +12,13 @@ import OwnerImage from '../assets/img/SylwiaJola.jpg'
 import co2Image from '../assets/img/co2_01.png'
 import hifuImage from '../assets/img/hifu_01.png'
 import laserDepilationImage from '../assets/img/laser_dep_01.png'
+import microImage from '../assets/img/micro_01.png'
 import pmuBrowsImage from '../assets/img/pmu_brwi_01.jpg'
+import pmuBrows3dImage from '../assets/img/brwi-wloskowe-3d.jpg'
+import pmuEyelinerRemovalImage from '../assets/img/pmu_rem_02.png'
 import pmuRemovalImage from '../assets/img/pmu_rem_01.png'
 import productImage from '../assets/img/product_01.png'
+import earPiercingImage from '../assets/img/uszy_01.jpg'
 import voucherImage200 from '../assets/img/voucher_200zl.png'
 import voucherImage500 from '../assets/img/voucher_500zl.png'
 
@@ -39,10 +43,52 @@ const reasons = [
 const specializations = [
   {
     title: 'Makijaż Permanentny',
-    description: 'Brwi, usta oraz kreski podkreślające naturalne piękno.',
+    description:
+      'Brwi, usta oraz kreski podkreślające naturalne piękno. Także usuwanie starego PMU.',
     href: '/brwi-permanentne-ciechanow',
     image: pmuBrowsImage,
   },
+  {
+    title: 'Przekłuwanie Uszu',
+    description:
+      'Estetyczne i higieniczne przekłuwanie płatka oraz chrząstki ucha.',
+    href: '/przekluwanie-uszu-ciechanow',
+    image: earPiercingImage,
+  },
+  {
+    title: 'Zabiegi na Twarz',
+    description:
+      'Nanoigły Aurumaris, mezoterapia mikroigłowa i peeling węglowy dla świeżej, odmłodzonej skóry.',
+    href: '/nanoigly-aurumaris-ciechanow',
+    image: microImage,
+  },
+]
+
+const newTreatments = [
+  {
+    title: 'Naturalny włos 3D',
+    description:
+      'Brwi permanentne z precyzyjnie rysowanym włoskiem, nie do odróżnienia od naturalnych.',
+    href: '/naturalny-wlos-3d-ciechanow',
+    image: pmuBrows3dImage,
+  },
+  {
+    title: 'Nanoigły Aurumaris',
+    description:
+      'Nowy zabieg na twarz: odżywienie, rozświetlenie i odmłodzenie skóry bez rekonwalescencji.',
+    href: '/nanoigly-aurumaris-ciechanow',
+    image: microImage,
+  },
+  {
+    title: 'Usuwanie kresek permanentnych',
+    description:
+      'Laserowe rozjaśnianie starych lub nieudanych kresek w delikatnej okolicy oka.',
+    href: '/usuwanie-kresek-permanentnych-ciechanow',
+    image: pmuEyelinerRemovalImage,
+  },
+]
+
+const laserTreatments = [
   {
     title: 'HIFU',
     description: 'Niechirurgiczny lifting twarzy i poprawa owalu.',
@@ -75,29 +121,33 @@ const problemBlocks = [
     href: '/problemy/nieudany-pmu-ciechanow',
     recommendations: [
       'Brwi permanentne',
+      'Naturalny włos 3D',
       'Usta permanentne',
       'Kreski permanentne',
     ],
   },
   {
+    title: 'Nie podoba Ci się stary makijaż permanentny?',
+    href: '/usuwanie-kresek-permanentnych-ciechanow',
+    recommendations: [
+      'Usuwanie kresek permanentnych',
+      'Laserowe usuwanie pigmentacji',
+    ],
+  },
+  {
     title: 'Chcesz wyglądać młodziej?',
     href: '/problemy/zmarszczki-ciechanow',
-    recommendations: ['HIFU', 'Laser CO2', 'Mezoterapia mikroigłowa'],
+    recommendations: ['Nanoigły Aurumaris', 'Mezoterapia mikroigłowa', 'HIFU'],
   },
   {
     title: 'Masz przebarwienia lub blizny?',
     href: '/problemy/przebarwienia-ciechanow',
-    recommendations: ['Laser CO2', 'Peeling węglowy', 'Resurfacing'],
+    recommendations: ['Peeling węglowy', 'Laser CO2', 'Resurfacing'],
   },
   {
     title: 'Chcesz pozbyć się owłosienia?',
     href: '/problemy/nadmierne-owlosienie-ciechanow',
     recommendations: ['Depilacja laserowa'],
-  },
-  {
-    title: 'Nie podoba Ci się stary makijaż permanentny?',
-    href: '/usuwanie-makijazu-permanentnego-ciechanow',
-    recommendations: ['Laserowe usuwanie pigmentacji'],
   },
 ]
 
@@ -253,10 +303,12 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
       <Head>
-        <title>Biały Lotos Ciechanów | PMU, HIFU, laser CO2</title>
+        <title>
+          Biały Lotos Ciechanów | Makijaż permanentny, przekłuwanie uszu
+        </title>
         <meta
           name="description"
-          content="Biały Lotos Ciechanów: makijaż permanentny, kosmetologia estetyczna, HIFU, laser CO2, depilacja laserowa i naturalne efekty przed i po."
+          content="Biały Lotos Ciechanów: makijaż permanentny, naturalny włos 3D, usuwanie kresek permanentnych, przekłuwanie uszu i zabiegi na twarz nanoigłami Aurumaris."
         />
       </Head>
       <Nav />
@@ -272,8 +324,8 @@ const HomePage = () => {
                 Piękno, które podkreśla Ciebie
               </h1>
               <p className="max-w-2xl text-base leading-8 text-neutral-500">
-                Makijaż permanentny, kosmetologia estetyczna i nowoczesne
-                technologie laserowe w Ciechanowie.
+                Makijaż permanentny, przekłuwanie uszu i nowoczesne zabiegi na
+                twarz w Ciechanowie.
               </p>
             </div>
             <ul className="grid gap-3 text-sm leading-7 text-neutral-500 sm:grid-cols-3">
@@ -328,7 +380,7 @@ const HomePage = () => {
         <section className="bg-white px-5 py-16 sm:px-6">
           <div className="mx-auto max-w-6xl space-y-10">
             <SectionHeader eyebrow="Nasze specjalizacje" title="Zabiegi" />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-5 md:grid-cols-3">
               {specializations.map((specialization) => (
                 <article
                   key={specialization.title}
@@ -353,6 +405,43 @@ const HomePage = () => {
                     </GoldLink>
                   </div>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-stone-200 bg-white px-5 py-16 sm:px-6">
+          <div className="mx-auto max-w-6xl space-y-10">
+            <SectionHeader
+              eyebrow="Nowości w Białym Lotosie"
+              title="Nowe zabiegi"
+            />
+            <div className="grid gap-5 md:grid-cols-3">
+              {newTreatments.map((treatment) => (
+                <Link
+                  key={treatment.title}
+                  href={treatment.href}
+                  className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-transform hover:-translate-y-1"
+                >
+                  <div className="relative">
+                    <Image
+                      src={treatment.image}
+                      alt={treatment.title}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                    <span className="absolute left-4 top-4 bg-gold px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.16em] text-white">
+                      Nowość
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-dmserif text-2xl font-normal leading-tight text-neutral-900">
+                      {treatment.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-neutral-500">
+                      {treatment.description}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -450,7 +539,7 @@ const HomePage = () => {
                 align="left"
                 eyebrow="Efekty przed i po"
                 title="Naturalna zmiana, widoczny efekt"
-                description="Kategorie: brwi permanentne, usta permanentne, HIFU, laser CO2 i usuwanie PMU."
+                description="Kategorie: brwi permanentne, usta permanentne, kreski, usuwanie PMU i rzęsy."
               />
               <GoldLink href="/galeria">Zobacz wszystkie efekty</GoldLink>
             </div>
@@ -543,14 +632,46 @@ const HomePage = () => {
                   pozabiegowych.
                 </p>
                 <p>
-                  Łączymy makijaż permanentny, kosmetologię estetyczną i
-                  nowoczesne technologie laserowe, ponieważ każda skóra i każda
-                  historia wymaga innego planu. Ważne są dla nas bezpieczeństwo,
-                  higiena, spokojna komunikacja oraz efekt dopasowany do urody,
-                  wieku i codzienności klientki.
+                  Specjalizujemy się w makijażu permanentnym, przekłuwaniu uszu
+                  i zabiegach na twarz, ponieważ każda skóra i każda historia
+                  wymaga innego planu. Ważne są dla nas bezpieczeństwo, higiena,
+                  spokojna komunikacja oraz efekt dopasowany do urody, wieku i
+                  codzienności klientki.
                 </p>
               </div>
               <GoldLink href="/o-nas">Poznaj nas</GoldLink>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-stone-200 bg-white px-5 py-16 sm:px-6">
+          <div className="mx-auto max-w-6xl space-y-8">
+            <SectionHeader
+              eyebrow="Pozostałe zabiegi"
+              title="Technologie laserowe"
+            />
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {laserTreatments.map((treatment) => (
+                <Link
+                  key={treatment.title}
+                  href={treatment.href}
+                  className="group overflow-hidden rounded-lg border border-stone-200 bg-white transition-colors hover:border-gold"
+                >
+                  <Image
+                    src={treatment.image}
+                    alt={treatment.title}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-dmserif text-lg font-normal leading-tight text-neutral-900">
+                      {treatment.title}
+                    </h3>
+                    <p className="mt-2 hidden text-xs leading-6 text-neutral-500 sm:block">
+                      {treatment.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

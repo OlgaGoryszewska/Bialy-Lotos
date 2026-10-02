@@ -28,6 +28,7 @@ const heroImagesBySlug = {
   'hifu-ciechanow': hifuImage,
   'laser-frakcyjny-co2-ciechanow': co2Image,
   'mezoterapia-mikroiglowa-ciechanow': microImage,
+  'nanoigly-aurumaris-ciechanow': microImage,
   'peeling-weglowy-ciechanow': peelingImage,
 }
 
@@ -37,7 +38,8 @@ const sectionClass =
 const effectsIntro =
   'Zobacz przykładowe efekty i charakter pracy, aby łatwiej wybrać zabieg dopasowany do Twoich oczekiwań.'
 
-const serviceSlugsWithoutEffects = []
+// Usługi bez zdjęć efektów – usuń slug z listy po dodaniu zdjęć
+const serviceSlugsWithoutEffects = ['nanoigly-aurumaris-ciechanow']
 
 const defaultProblems = [
   'chcesz poprawić wygląd bez codziennego pośpiechu przy lustrze',
@@ -212,6 +214,11 @@ const ServicePage = ({ service }) => {
           <div className="space-y-5">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
               {service.category}
+              {service.isNew && (
+                <span className="ml-3 bg-gold px-2 py-1 text-[0.6rem] tracking-[0.16em] text-white">
+                  Nowość
+                </span>
+              )}
             </p>
             <h1 className="font-dmserif text-4xl font-normal leading-tight text-neutral-900 sm:text-5xl">
               {service.title} Ciechanów
@@ -414,6 +421,12 @@ const ServicePage = ({ service }) => {
           <h2 className="font-dmserif text-3xl font-normal text-neutral-900">
             Cennik
           </h2>
+          {priceSections.length === 0 && (
+            <p className="mt-5 text-sm leading-7 text-neutral-500">
+              Aktualną cenę zabiegu sprawdzisz w rezerwacji online lub
+              telefonicznie w salonie.
+            </p>
+          )}
           <div className="mt-5 space-y-6">
             {priceSections.map((section) => (
               <div key={section.title}>
