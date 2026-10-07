@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const SiteFooter = () => (
-  <footer className="border-t border-stone-200 bg-white px-5 py-8 sm:px-6">
+  <footer className="border-t border-stone-200 bg-white px-5 pb-24 pt-8 sm:px-6 sm:pb-28">
     <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
       <p>Biały Lotos, Ciechanów</p>
       <div className="flex flex-wrap gap-5">

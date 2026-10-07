@@ -1,5 +1,6 @@
 import '../src/index.css'
 import Head from 'next/head'
+import { FloatingBookingButton } from '../src/components/FloatingBookingButton'
 import { CookieConsentBanner } from '../src/components/PrivacyConsent'
 import { SiteFooter } from '../src/components/SiteFooter'
 
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
       <SiteFooter />
+      <FloatingBookingButton />
       <CookieConsentBanner />
     </>
   )

@@ -1,12 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { bookingUrl } from './FloatingBookingButton'
 import { Menu, navLinks } from './Menu'
 import logoText from '../assets/img/logoText.png'
 
 export const Nav = () => {
   return (
-    <header className="sticky top-0 z-40 border-b border-stone-100 bg-white/90 px-4 shadow-[0_8px_30px_rgba(15,23,42,0.04)] backdrop-blur-md sm:px-6">
+    <header className="sticky top-0 z-[60] border-b border-stone-100 bg-white/90 px-4 shadow-[0_8px_30px_rgba(15,23,42,0.04)] backdrop-blur-md sm:px-6">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6">
         <Link href="/" aria-label="Biały Lotos - strona główna">
           <Image
@@ -34,6 +35,14 @@ export const Nav = () => {
                 {link.label}
               </Link>
             ))}
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-gold px-4 py-2 text-[0.64rem] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-900 xl:text-xs xl:tracking-[0.14em]"
+          >
+            Umów wizytę
+          </a>
         </nav>
 
         <Menu />

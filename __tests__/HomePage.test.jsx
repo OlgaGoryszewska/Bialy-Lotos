@@ -13,8 +13,8 @@ describe('HomePage', () => {
       })
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('link', { name: /umów wizytę/i })
-    ).toBeInTheDocument()
+      screen.getAllByRole('link', { name: /umów wizytę/i }).length
+    ).toBeGreaterThan(0)
     expect(img).toBeInTheDocument()
   })
 })
